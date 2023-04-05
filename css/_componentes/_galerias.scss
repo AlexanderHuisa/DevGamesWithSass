@@ -1,23 +1,37 @@
 .galeria {
     height:  250px;
     margin: 10px auto;
-    padding: 20px 0 0 30px;
-    justify-content: space-evenly;
+    //padding: 20px 0 0 30px;
     @include caja;
-
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 0.5fr 0.8fr 0.35fr 1fr;
+    grid-template-rows: 50px 80px 110px;
+    
     &__foto-principal{
-        float: left;
-        margin-right: 10px;
+        grid-area: 2/1/4/3;
+        text-align: right;
+        padding: 0 10px 0 0;
+        //background-color: green;
     }
-    &__foto.adicionales {
-        height: 70px;
-        margin-right: 5px;
-        margin-bottom: 5px;
+    &__fotos-uno{
+        grid-area: 2/3/3/5;
+        //background-color: red;
+    }
+    &__fotos-dos{
+        grid-area: 3/3/4/4;
+        //background-color: orange;
+    }
+    &__fotos-tres{
+        grid-area: 3/4/4/5;
+        //background-color: blue;
     }
     h2{
-        margin-bottom: 10px;
         font-weight: 600;
         font-size: 20px;
+        grid-area: 1/1/2/5;
+        text-align: center;
+        padding-top: 10px;
         @include titulos($font-text);
     }
     img {
